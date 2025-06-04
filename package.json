@@ -1,15 +1,10 @@
-{
-  "name": "rest-express",
-  "version": "1.0.0",
-  "type": "module",
-  "license": "MIT",
-  "scripts": {
-    "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist/server && mkdir -p dist/server/public && cp -r dist/* dist/server/public/ && rm -rf dist/server/public/server",
-    "start": "NODE_ENV=production node dist/server/index.js",
-    "check": "tsc",
-    "db:push": "drizzle-kit push"
-  },
+"scripts": {
+  "dev": "NODE_ENV=development tsx server/index.ts",
+  "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist/server && mkdir -p dist/server/public && cp -r dist/assets dist/server/public/assets && cp dist/index.html dist/server/public/index.html",
+  "start": "NODE_ENV=production node dist/server/index.js",
+  "check": "tsc",
+  "db:push": "drizzle-kit push"
+}
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
