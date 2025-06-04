@@ -1,0 +1,400 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+
+  /* Grade colors - Afternoon (Anos Iniciais) */
+  --grade1: 142 70% 40%;  /* Green for 1° Ano */
+  --grade2: 265 67% 64%;  /* Purple for 2° Ano */
+  --grade3: 38 96% 51%;   /* Amber for 3° Ano */
+  --grade4: 0 84% 60%;    /* Red for 4° Ano */
+  --grade5: 199 89% 48%;  /* Blue for 5° Ano */
+  
+  /* Morning colors (Anos Finais) */
+  --morning1: 215 100% 60%;  /* Blue for 6° Ano */
+  --morning2: 195 95% 50%;   /* Cyan for 7° Ano */
+  --morning3: 180 90% 40%;   /* Teal for 8° Ano */
+  --morning4: 165 85% 40%;   /* Green-Teal for 9° Ano */
+  --morning5: 150 80% 40%;   /* Green-Blue for 1° EM (Manhã) */
+  
+  /* Night colors (Ensino Médio) */
+  --night1: 280 70% 50%;     /* Purple for 1° EM (Noite) */
+  --night2: 300 75% 45%;     /* Magenta for 2° EM */
+  --night3: 320 80% 45%;     /* Pink for 3° EM */
+
+  /* Chart colors */
+  --chart-1: var(--grade1);
+  --chart-2: var(--grade2);
+  --chart-3: var(--grade3);
+  --chart-4: var(--grade4);
+  --chart-5: var(--grade5);
+
+  /* Sidebar colors */
+  --sidebar-background: var(--background);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+
+  /* Chart colors - dark mode */
+  --chart-1: var(--grade1);
+  --chart-2: var(--grade2);
+  --chart-3: var(--grade3);
+  --chart-4: var(--grade4);
+  --chart-5: var(--grade5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gray-50 text-foreground;
+  }
+}
+
+/* Grade-specific styles - Afternoon Period */
+.bg-grade1 {
+  background-color: hsl(var(--grade1));
+}
+.bg-grade1-light {
+  background-color: hsl(var(--grade1) / 0.1);
+}
+.text-grade1 {
+  color: hsl(var(--grade1));
+}
+.border-grade1 {
+  border-color: hsl(var(--grade1));
+}
+.hover\:bg-grade1-light:hover {
+  background-color: hsl(var(--grade1) / 0.1);
+}
+.hover\:text-grade1:hover {
+  color: hsl(var(--grade1));
+}
+
+.bg-grade2 {
+  background-color: hsl(var(--grade2));
+}
+.bg-grade2-light {
+  background-color: hsl(var(--grade2) / 0.1);
+}
+.text-grade2 {
+  color: hsl(var(--grade2));
+}
+.border-grade2 {
+  border-color: hsl(var(--grade2));
+}
+.hover\:bg-grade2-light:hover {
+  background-color: hsl(var(--grade2) / 0.1);
+}
+.hover\:text-grade2:hover {
+  color: hsl(var(--grade2));
+}
+
+.bg-grade3 {
+  background-color: hsl(var(--grade3));
+}
+.bg-grade3-light {
+  background-color: hsl(var(--grade3) / 0.1);
+}
+.text-grade3 {
+  color: hsl(var(--grade3));
+}
+.border-grade3 {
+  border-color: hsl(var(--grade3));
+}
+.hover\:bg-grade3-light:hover {
+  background-color: hsl(var(--grade3) / 0.1);
+}
+.hover\:text-grade3:hover {
+  color: hsl(var(--grade3));
+}
+
+.bg-grade4 {
+  background-color: hsl(var(--grade4));
+}
+.bg-grade4-light {
+  background-color: hsl(var(--grade4) / 0.1);
+}
+.text-grade4 {
+  color: hsl(var(--grade4));
+}
+.border-grade4 {
+  border-color: hsl(var(--grade4));
+}
+.hover\:bg-grade4-light:hover {
+  background-color: hsl(var(--grade4) / 0.1);
+}
+.hover\:text-grade4:hover {
+  color: hsl(var(--grade4));
+}
+
+.bg-grade5 {
+  background-color: hsl(var(--grade5));
+}
+.bg-grade5-light {
+  background-color: hsl(var(--grade5) / 0.1);
+}
+.text-grade5 {
+  color: hsl(var(--grade5));
+}
+.border-grade5 {
+  border-color: hsl(var(--grade5));
+}
+.hover\:bg-grade5-light:hover {
+  background-color: hsl(var(--grade5) / 0.1);
+}
+.hover\:text-grade5:hover {
+  color: hsl(var(--grade5));
+}
+
+/* Estilos específicos para impressão */
+@media print {
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+  
+  .print-container, .print-container * {
+    visibility: visible;
+  }
+  
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  .print-hidden {
+    display: none !important;
+  }
+  
+  /* Cores para cada série ao imprimir */
+  .bg-grade1-light {
+    background-color: #E0F7FA !important;
+  }
+  
+  .bg-grade2-light {
+    background-color: #E8F5E9 !important;
+  }
+  
+  .bg-grade3-light {
+    background-color: #FFF8E1 !important;
+  }
+  
+  .bg-grade4-light {
+    background-color: #F3E5F5 !important;
+  }
+  
+  .bg-grade5-light {
+    background-color: #FFEBEE !important;
+  }
+  
+  /* Morning Period Styles (Anos Finais - Manhã) */
+  .bg-morning1 {
+    background-color: hsl(var(--morning1));
+  }
+  .bg-morning1-light {
+    background-color: hsl(var(--morning1) / 0.1);
+  }
+  .text-morning1 {
+    color: hsl(var(--morning1));
+  }
+  .border-morning1 {
+    border-color: hsl(var(--morning1));
+  }
+  .hover\:bg-morning1-light:hover {
+    background-color: hsl(var(--morning1) / 0.1);
+  }
+  .hover\:text-morning1:hover {
+    color: hsl(var(--morning1));
+  }
+  
+  .bg-morning2 {
+    background-color: hsl(var(--morning2));
+  }
+  .bg-morning2-light {
+    background-color: hsl(var(--morning2) / 0.1);
+  }
+  .text-morning2 {
+    color: hsl(var(--morning2));
+  }
+  .border-morning2 {
+    border-color: hsl(var(--morning2));
+  }
+  .hover\:bg-morning2-light:hover {
+    background-color: hsl(var(--morning2) / 0.1);
+  }
+  .hover\:text-morning2:hover {
+    color: hsl(var(--morning2));
+  }
+  
+  .bg-morning3 {
+    background-color: hsl(var(--morning3));
+  }
+  .bg-morning3-light {
+    background-color: hsl(var(--morning3) / 0.1);
+  }
+  .text-morning3 {
+    color: hsl(var(--morning3));
+  }
+  .border-morning3 {
+    border-color: hsl(var(--morning3));
+  }
+  .hover\:bg-morning3-light:hover {
+    background-color: hsl(var(--morning3) / 0.1);
+  }
+  .hover\:text-morning3:hover {
+    color: hsl(var(--morning3));
+  }
+  
+  .bg-morning4 {
+    background-color: hsl(var(--morning4));
+  }
+  .bg-morning4-light {
+    background-color: hsl(var(--morning4) / 0.1);
+  }
+  .text-morning4 {
+    color: hsl(var(--morning4));
+  }
+  .border-morning4 {
+    border-color: hsl(var(--morning4));
+  }
+  .hover\:bg-morning4-light:hover {
+    background-color: hsl(var(--morning4) / 0.1);
+  }
+  .hover\:text-morning4:hover {
+    color: hsl(var(--morning4));
+  }
+  
+  .bg-morning5 {
+    background-color: hsl(var(--morning5));
+  }
+  .bg-morning5-light {
+    background-color: hsl(var(--morning5) / 0.1);
+  }
+  .text-morning5 {
+    color: hsl(var(--morning5));
+  }
+  .border-morning5 {
+    border-color: hsl(var(--morning5));
+  }
+  .hover\:bg-morning5-light:hover {
+    background-color: hsl(var(--morning5) / 0.1);
+  }
+  .hover\:text-morning5:hover {
+    color: hsl(var(--morning5));
+  }
+  
+  /* Night Period Styles (Ensino Médio - Noite) */
+  .bg-night1 {
+    background-color: hsl(var(--night1));
+  }
+  .bg-night1-light {
+    background-color: hsl(var(--night1) / 0.1);
+  }
+  .text-night1 {
+    color: hsl(var(--night1));
+  }
+  .border-night1 {
+    border-color: hsl(var(--night1));
+  }
+  .hover\:bg-night1-light:hover {
+    background-color: hsl(var(--night1) / 0.1);
+  }
+  .hover\:text-night1:hover {
+    color: hsl(var(--night1));
+  }
+  
+  .bg-night2 {
+    background-color: hsl(var(--night2));
+  }
+  .bg-night2-light {
+    background-color: hsl(var(--night2) / 0.1);
+  }
+  .text-night2 {
+    color: hsl(var(--night2));
+  }
+  .border-night2 {
+    border-color: hsl(var(--night2));
+  }
+  .hover\:bg-night2-light:hover {
+    background-color: hsl(var(--night2) / 0.1);
+  }
+  .hover\:text-night2:hover {
+    color: hsl(var(--night2));
+  }
+  
+  .bg-night3 {
+    background-color: hsl(var(--night3));
+  }
+  .bg-night3-light {
+    background-color: hsl(var(--night3) / 0.1);
+  }
+  .text-night3 {
+    color: hsl(var(--night3));
+  }
+  .border-night3 {
+    border-color: hsl(var(--night3));
+  }
+  .hover\:bg-night3-light:hover {
+    background-color: hsl(var(--night3) / 0.1);
+  }
+  .hover\:text-night3:hover {
+    color: hsl(var(--night3));
+  }
+}
